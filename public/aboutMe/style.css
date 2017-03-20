@@ -1,0 +1,101 @@
+body {
+    font-family: "微软雅黑", "sans-serif", arial;
+}
+
+#section0,
+#section1,
+#section2,
+#section3,
+#section4,
+#section5 {
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#section0 {
+    background-color: #B2EBF2;
+    background-image: url(images/bg0.jpg);
+}
+
+#section0 .title {
+    display: block;
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    padding: 50px 0 85px;
+}
+
+#section0 .content {
+    text-align: center;
+}
+
+#section0 .left-part {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+#section0 .left-part .avatar {
+    width: 200px;
+    height: 200px;
+    border: 10px solid #ddd;
+    border-radius: 200px;
+    overflow: hidden;
+}
+
+#section0 .left-part .info {
+    width: 220px;
+    padding: 0 10px;
+    margin-top: 15px;
+    font-family: "Abril Fatface", "微软雅黑", sans-serif, arial;
+}
+
+#section0 .left-part .name {
+    font-size: 40px;
+    color: white;
+    display: block;
+}
+
+#section0 .left-part .email {
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+
+#section0 .left-part img {
+    max-width: 100%;
+}
+
+#section0 .right-part {
+    display: inline-block;
+    width: 500px;
+    min-height: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 16px 40px;
+    margin-left: 20px;
+    text-align: left;
+    color: #fff;
+    vertical-align: middle;
+}
+
+#section0 .right-part p a {
+    color: #000;
+    text-decoration: none;
+}
+
+#section1 {
+    background-image: url(images/bg1.jpg);
+}
+#section2 {
+    background-image: url(images/bg2.jpg);
+}
+#section3 {
+    background-image: url(images/bg3.jpg);
+}
+#section4 {
+    background-image: url(images/bg4.jpg);
+}
+#section5 {
+    background-image: url(images/bg5.jpg);
+}

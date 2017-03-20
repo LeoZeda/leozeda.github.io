@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+.page:first-child {
+    background-color: #7B68EE;
+}
+
+.page:nth-child(2) {
+    background-color: #00BFFF;
+}
+
+.page:nth-child(3) {
+    background-color: #ff8c81;
+}
+
+.page:last-child {
+    background-color: #40E0D0;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    color: #000;
+    font-size: 18px;
+    opacity: 0;
+}
+
+.subtitle {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    color: #000;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.current .title{
+    -webkit-animation: slideToTop .8s ease both;
+}
+
+.current .subtitle{
+    -webkit-animation: slideToTop .8s 0.3s ease both;
+}
+
+.arrow{
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 33px;
+    height: 18px;
+    margin-left: -16px;
+    background: url(img/arrow.png) no-repeat;
+    background-size: 33px auto;
+    opacity: 0;
+}
+
+.arrow-h{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    width: 33px;
+    height: 18px;
+    margin-top: -9px;
+    opacity: 0;
+}
+
+.arrow-h i{
+    display: block;
+    width: 33px;
+    height: 18px;
+    background: url(img/arrow.png) no-repeat;
+    background-size: 33px auto;
+    -webkit-transform: rotate(-90deg);
+}
+
+.current .arrow {
+    -webkit-animation: swipeMoveTop 1.5s 1s ease infinite;
+}
+
+.current .arrow-h {
+    -webkit-animation: swipeMoveLeft 1.5s 1s ease infinite;
+}
+
+.content .circle {
+    background: url("./img/circle.png");
+    width: 292.5px;
+    height: 300.5px;
+    top: 50%;
+    left: 50%;
+    margin-left: -146.5px;
+    margin-top: -150.5px;
+    position: absolute;
+    background-size: contain;
+    opacity: 0;
+}
+
+.current .pt-page-movecircle {
+    -webkit-animation: moveCircle ease-in-out 1.2s both;
+    animation: moveCircle ease-in-out 1.2s both;
+}
+
+.content .bg-img {
+    background: url("./img/bg-img.png");
+    background-size: contain;
+    width: 230px;
+    height: 308px;
+    top: 0;
+    left: 50%;
+    margin-left: -115px;
+    position: absolute;
+    opacity: 0;
+}
+
+.current .pt-page-moveFromBottom {
+    -webkit-animation: moveFromBottom .6s ease both;
+    animation: moveFromBottom .6s ease both;
+}
+
+.content .person {
+    background: url("./img/person.png");
+    background-size: contain;
+    width: 210px;
+    height: 245px;
+    position: absolute;
+    left: 50%;
+    top: 13%;
+    margin-left: -104.5px;
+    opacity: 0;
+}
+
+.current .pt-page-moveFromLeft {
+    -webkit-animation: moveFromLeft .6s ease both;
+    animation: moveFromLeft .6s ease both;
+}
+
+.content .word {
+    background: url("./img/word.png");
+    background-size: contain;
+    width: 265px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    margin-left: -132.5px;
+    opacity: 0;
+}
+
+.content .qr-code {
+    background: url("./img/qrcode.png");
+    background: contain;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    opacity: 0;
+}
+
+.description {
+    position: absolute;
+    top: 50%;
+    width: 270px;
+    left: 50%;
+    margin-left: -135px;
+    margin-top: -70px;
+    opacity: 0;
+}
+
+.description ul {
+    margin-top: 10px;
+}
+
+.description li {
+    display: block;
+}
