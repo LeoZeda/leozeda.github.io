@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Hexo + Github Pages建博客 | You know nothing! | Do what you want~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="hexo,教程">
+    <meta name="description" content="前言作为一个有理想的程序员都希望自己弄一个属于自己的博客，当然我也不例外哈～平时查找相关资料或解决问题的时候就看到各种牛人们的博客，自己也一直想弄，但都没有太多时间去弄（借口）。一开始想在阿里云上弄个自己的网站然后写博客的，于是申请了两年免费的虚拟机，申请后闲置了半年才去折腾。虚拟机毕竟是虚拟机，它不支持ssh登录，不能自己安装软件，只是支持php、HTML、WAP，php、wap都不太懂。云服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + Github Pages建博客">
+<meta property="og:url" content="http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/index.html">
+<meta property="og:site_name" content="You know nothing!">
+<meta property="og:description" content="前言作为一个有理想的程序员都希望自己弄一个属于自己的博客，当然我也不例外哈～平时查找相关资料或解决问题的时候就看到各种牛人们的博客，自己也一直想弄，但都没有太多时间去弄（借口）。一开始想在阿里云上弄个自己的网站然后写博客的，于是申请了两年免费的虚拟机，申请后闲置了半年才去折腾。虚拟机毕竟是虚拟机，它不支持ssh登录，不能自己安装软件，只是支持php、HTML、WAP，php、wap都不太懂。云服务">
+<meta property="og:updated_time" content="2016-12-28T14:47:33.801Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo + Github Pages建博客">
+<meta name="twitter:description" content="前言作为一个有理想的程序员都希望自己弄一个属于自己的博客，当然我也不例外哈～平时查找相关资料或解决问题的时候就看到各种牛人们的博客，自己也一直想弄，但都没有太多时间去弄（借口）。一开始想在阿里云上弄个自己的网站然后写博客的，于是申请了两年免费的虚拟机，申请后闲置了半年才去折腾。虚拟机毕竟是虚拟机，它不支持ssh登录，不能自己安装软件，只是支持php、HTML、WAP，php、wap都不太懂。云服务">
+    
+        <link rel="alternative" href="/atom.xml" title="You know nothing!" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.2">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Leo</h5>
+          <a href="mailto:420212713@qq.com" title="420212713@qq.com" class="mail">420212713@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LeoZeda" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/demo"  >
+                <i class="icon icon-lg icon-folder"></i>
+                Demo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/aboutMe"  >
+                <i class="icon icon-lg icon-user-o"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo + Github Pages建博客</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hexo + Github Pages建博客</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-26T13:35:49.000Z" itemprop="datePublished" class="page-time">
+  2016-12-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/教程/">教程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装及基本用法"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装及基本用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hexo主题"><span class="post-toc-number">3.</span> <span class="post-toc-text">Hexo主题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Github-Pages部署发布"><span class="post-toc-number">4.</span> <span class="post-toc-text">Github Pages部署发布</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传送门"><span class="post-toc-number">5.</span> <span class="post-toc-text">传送门</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Hexo+GithubPages博客"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hexo + Github Pages建博客</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-12-26 21:35" datetime="2016-12-26T13:35:49.000Z"  itemprop="datePublished">2016-12-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/教程/">教程</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为一个有理想的程序员都希望自己弄一个属于自己的博客，当然我也不例外哈～平时查找相关资料或解决问题的时候就看到各种牛人们的博客，自己也一直想弄，但都没有太多时间去弄（借口）。<br>一开始想在阿里云上弄个自己的网站然后写博客的，于是申请了两年免费的虚拟机，申请后闲置了半年才去折腾。虚拟机毕竟是虚拟机，它不支持ssh登录，不能自己安装软件，只是支持php、HTML、WAP，php、wap都不太懂。云服务器又不舍得买，也就只好安装wordpress来搭建博客，安装完选好主题之后，发现wordpress不太好用，感觉条条框框的较多，也就又搁置了一段时间。最后，在网上看到可以用hexo+githubpages搭建，也就又开始折腾了。<br>hexo+githubpages比较好的地方：</p>
+<ul>
+<li>根据Markdown文件直接生成静态的html</li>
+<li><a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>可以自己选择，并可以直接修改主题代码</li>
+<li>完全免费</li>
+</ul>
+<h2 id="安装及基本用法"><a href="#安装及基本用法" class="headerlink" title="安装及基本用法"></a>安装及基本用法</h2><p>hexo<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">官网教程</a>（<a href="https://hexo.io/docs/" target="_blank" rel="external">英文</a>）讲解都很详细的，按照文档一步步来都可以完成，网上搜到的教程很多很杂，有些教程可能是旧版本的，所以最后还是查看官网的教程，比较新，免得自己踩坑。<br><strong>安装依赖</strong>：</p>
+<ul>
+<li><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a></li>
+<li><a href="http://git-scm.com/" target="_blank" rel="external">Git</a></li>
+</ul>
+<p><strong>安装hexo</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>安装完之后可以敲下面的命令查看hexo的用法，以及验证是否安装成功：<br><code>$ hexo -h或--help</code></p>
+<p><strong>新建博客</strong><br>执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。若floder不存在会自动创建。<br><code>$ hexo init &lt;folder&gt;</code><br><strong>新建文章</strong><br>新建一个题目为title的文章，新建的文件路径在source/_posts，文件名为title.md<br><code>$ hexo new &lt;title&gt;</code><br><strong>启用本地服务</strong><br>运行下面的命令， 就可以在 localhost:4000/ 查看你的博客。<br><code>$ hexo server（或 s）</code></p>
+<h2 id="Hexo主题"><a href="#Hexo主题" class="headerlink" title="Hexo主题"></a>Hexo主题</h2><p>hexo默认的是landscape主题, 可以自己安装其他主题。在主题官网上个人比较喜欢的主题是<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external">indigo</a>,这个主题的安装配置<a href="https://github.com/yscoder/hexo-theme-indigo/wiki" target="_blank" rel="external">教程</a>还是比较完善的。<br>上了船之后，后来发现还有一些很不错的主题：</p>
+<ul>
+<li><a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="external">material</a></li>
+<li><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a></li>
+</ul>
+<p>这两个教程就更完善了，不过这个还是看个人的喜好哈～</p>
+<p>官网的<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">主题介绍</a>相对比较简单，不过也说明了一些关键点，如：</p>
+<ul>
+<li>修改主题只需修改_config.xml内的theme即可切换，前提是在themes文件夹内有这个主题</li>
+<li>一个主题的文件结构为：<ul>
+<li>_config.yml， 主题内的配置文件</li>
+<li>languages， 一些国际化的配置</li>
+<li>layout，主题的模板， 自己定制可以修改这里的模板</li>
+<li>scripts， 第三方库脚本</li>
+<li>source，样式，图片等</li>
+</ul>
+</li>
+</ul>
+<p>详细的安装过程，可以参考所下载主题的安装教程，如本站的<a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external">indigo</a>。需要注意的是该主题要求Node 版本为 6.x 以上，要不然会导致一些插件编译或部署错误。</p>
+<h2 id="Github-Pages部署发布"><a href="#Github-Pages部署发布" class="headerlink" title="Github Pages部署发布"></a>Github Pages部署发布</h2><p><a href="https://pages.github.com" target="_blank" rel="external">github pages</a>是一个托管静态站点的服务，旨在能够直接从github仓库里托管个人、组织或项目页面。新建github page可以参考<a href="https://pages.github.com/" target="_blank" rel="external">官网教程</a>。<br>如果有个人域名的可参考如何将<a href="http://blog.csdn.net/lmj623565791/article/details/51319147" target="_blank" rel="external">github pages绑定到个人域名</a>, 绑定后访问你的域名就可以直接访问到github pages，瞬间变得高大上。</p>
+<p><strong>生成静态文件</strong><br><code>$ hexo generate(或g)</code>将md文件编译成静态网页到pulic目录下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PS： public 目录下的style.css需要删除后，在生成，否则不会覆盖，不知道是否是bug</div></pre></td></tr></table></figure></p>
+<p><strong>部署到git</strong>    <a href="https://hexo.io/zh-cn/docs/deployment.html#Git" target="_blank" rel="external">官网教程</a><br>安装 hexo-deployer-git<br><code>$ npm install hexo-deployer-git --save</code><br>修改配置文件_config.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: &lt;repository url&gt;</div><div class="line">  branch: [branch]</div><div class="line">  message: [message] (commit msg)</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PS： 一些非hexo的文件也可以放在public目录下，如CNAME，README.md等，放在其他地方不能部署到github</div></pre></td></tr></table></figure>
+<h2 id="传送门"><a href="#传送门" class="headerlink" title="传送门"></a>传送门</h2><ul>
+<li><a href="http://pad.haroopress.com/user.html" target="_blank" rel="external">haroopad</a> Markdown的编辑软件</li>
+<li><a href="http://blog.csdn.net/tao_627/article/details/50625436" target="_blank" rel="external">Markdown语法及haroopad软件安装</a></li>
+<li><a href="https://github.com/hexojs/hexo/wiki/Plugins" target="_blank" rel="external">hexo 插件</a></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2016-12-28T14:47:33.801Z" title="2016-12-28 22:47" itemprop="dateUpdated">2016年12月28日 22:47</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2016/12/26/Hexo+GithubPages博客/" target="_blank" rel="external">http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/</a>
+    </div>
+    <footer>
+        <a href="http://www.leozeda.com">
+            <img src="/img/avatar.jpg" alt="Leo">
+            Leo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教程/">教程</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/&title=《Hexo + Github Pages建博客》 — You know nothing!&pic=http://www.leozeda.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/&title=《Hexo + Github Pages建博客》 — You know nothing!&source=my blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo + Github Pages建博客》 — You know nothing!&url=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/&via=http://www.leozeda.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/12/28/HTML-DOM/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">HTML DOM</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Hexo+GithubPages博客" data-title="Hexo + Github Pages建博客" data-url="http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'leoblog', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.2');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢各位~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>You know nothing! &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/&title=《Hexo + Github Pages建博客》 — You know nothing!&pic=http://www.leozeda.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/&title=《Hexo + Github Pages建博客》 — You know nothing!&source=my blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo + Github Pages建博客》 — You know nothing!&url=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/&via=http://www.leozeda.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.leozeda.com/2016/12/26/Hexo+GithubPages博客/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQW4DIQwF0N7/0qnUVaVEyf9mWmngsaomKvBYWDbm6ysej5/x/OX3eP7+/L/Pv76f7eKBgYFxW8bj7Xi/lffbSg4lWTdZEQMD4wRGslgeQPPAnYTvaB4MDAyMYIH21zy4Y2BgYLQBNw+Xs8CNgYGBsVLEtpdrV4X1i2txDAyMGzLa4vM///7D/gYGBsZNGI+F0bYBVgLrh51gYGBszZhd7s8u0dpUL086MTAw9mYkoXNWsiZzzloCL3aCgYFxGGPWgLz2OUVyrfYiKcTAwNiUMVs+XyBvJ+R7wMDAwJg9hmhL2ZWC9kPJjYGBsR0jL2LXeW1zND8mDAyMvRl54pUskDyhyB9bJAeEgYFxJmMWXmetzfzgonIXAwPjSEYbEGdpZd4K/RDuMTAwDmBcm97Nksg27NZ9VwwMjBsyVhZuH0bkIbW+tsPAwNiaUadfo8v9nJ0XyUVCiYGBcXPGrPVYX4SVrz/q0hcDA2NrRts+TBLHa2cojgADA+MARh522422QfmyTBYDA+MYRvvYom0VJIlmdBwYGBhbM9rm5XrAXbn0r5uaGBgYN2c8ypGXoEkSOfv+Yi0MDIytGevROn80NnvSsdKEwMDA2ImRB9mkNJ2x24CLgYFxJmP2qKJN4JLitr35x8DAwMiTvDb3bMEf5sTAwMAoH3itzDx8ooGBgXEAY9YMmGH+5OofAwNja8Z6Y2CFnbdC18tgDAyMGzK+AacnQc+R1vQ3AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

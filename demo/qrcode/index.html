@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>在线二维码生成器</title>
+    <meta charset="utf-8">
+    <meta name="author" content="leo">
+    <meta name="robots" content="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="keywords" content="二维码,生成器">
+    <meta name="description" content="在线二维码生成器">
+    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="qrcode.min.js"></script>
+    <style type="text/css">
+        body {
+            background-color: #B3E5FC;
+        }
+        .qrcode-block {
+            text-align: center;
+            margin: auto;
+            padding-top: 40px;
+        }
+
+        #qrcode {
+            width: 300px;
+            padding: 0;
+            margin: 20px auto;
+        }
+
+        .text-input {
+            width: 220px;
+            margin-right: 12px;
+            padding: 2px 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="qrcode-block">
+        <h1>在线二维码生成器</h1>
+        <div>
+            <input class="text-input" type="text" name="textSrc" value="" placeholder="请输入要生成二维码的文本" />
+            <button onclick="generate();">生成</button>        
+        </div>
+        <dir id="qrcode"></dir>
+    </div>
+    <script type="text/javascript">
+        var qrcode = new QRCode($('#qrcode').get(0), {
+            height: 300,
+            width: 300
+        });
+        function generate(){
+            var textSrc = $('.text-input').val();
+            if( !textSrc ){
+                alert('input a text!');
+                $('.text-input').focus();
+                return ;
+            }
+            qrcode.makeCode(textSrc);
+        }
+        $('.text-input').on('keydown', function(e){
+            if( e.keyCode == 13 ){
+                generate();
+            }
+        });
+    </script>
+</body>
+</html>
