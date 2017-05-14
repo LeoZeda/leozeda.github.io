@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozeda.com/"/>
-  <updated>2017-03-20T16:15:45.650Z</updated>
+  <updated>2017-05-14T16:25:36.000Z</updated>
   <id>http://www.leozeda.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Yarn学习实践</title>
+    <link href="http://www.leozeda.com/2017/05/10/yarn%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://www.leozeda.com/2017/05/10/yarn学习实践/</id>
+    <published>2017-05-10T02:52:33.000Z</published>
+    <updated>2017-05-14T16:25:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##yarn介绍<br>yarn 是javascript的包管理工具，类似npm包管理工具，但是yarn比npm更快、更可靠、更安全。</p>
+<p>yarn有以下特点：<br><strong>1.离线工作</strong><br>如果之前安装过某个包，那么就可以在没有联网的情况下，再次安装。由于不需要再次下载安装，因此再次安装某个包会更快。</p>
+<p><strong>2.从多个资料库安装</strong><br>yarn可以从npm、bower、git甚至是本地文件系统获取并安装javascript包。</p>
+<p><strong>3.快速获取包</strong><br>yarn高效的将请求组成队列，避免大量使用网络资源。并会递归检查依赖包是否已经安装过，避免重复下载。<br>安装过程中，yarn是并行操作的，这使得安装过程快得多。</p>
+<p><strong>4.自动锁定包版本</strong><br>yarn在安装过程中自动产生yarn.lock文件，这个文件会锁定安装的包及其依赖的准确版本。</p>
+<p><strong>5.在不同设备中以相同的方式安装依赖</strong><br>yarn通过锁定文件和安装算法确保在不同的设备中，以及在生产环境中，安装的依赖都是相同的文件和相同的目录结构。</p>
+<p>##参考<br><a href="http://web.jobbole.com/tag/yarn/?repeat=w3tc" target="_blank" rel="external">伯乐在线</a><br><a href="http://web.jobbole.com/90284/" target="_blank" rel="external">Yarn 可以为你做的五件事</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##yarn介绍&lt;br&gt;yarn 是javascript的包管理工具，类似npm包管理工具，但是yarn比npm更快、更可靠、更安全。&lt;/p&gt;
+&lt;p&gt;yarn有以下特点：&lt;br&gt;&lt;strong&gt;1.离线工作&lt;/strong&gt;&lt;br&gt;如果之前安装过某个包，那么就可以在没有联网
+    
+    </summary>
+    
+    
+      <category term="Yarn" scheme="http://www.leozeda.com/tags/Yarn/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue学习笔记</title>

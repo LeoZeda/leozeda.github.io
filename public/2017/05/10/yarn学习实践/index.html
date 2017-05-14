@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Yarn学习实践 | You know nothing! | Do what you want~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Yarn">
+    <meta name="description" content="##yarn介绍yarn 是javascript的包管理工具，类似npm包管理工具，但是yarn比npm更快、更可靠、更安全。
+yarn有以下特点：1.离线工作如果之前安装过某个包，那么就可以在没有联网的情况下，再次安装。由于不需要再次下载安装，因此再次安装某个包会更快。
+2.从多个资料库安装yarn可以从npm、bower、git甚至是本地文件系统获取并安装javascript包。
+3.快速获取">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yarn学习实践">
+<meta property="og:url" content="http://www.leozeda.com/2017/05/10/yarn学习实践/index.html">
+<meta property="og:site_name" content="You know nothing!">
+<meta property="og:description" content="##yarn介绍yarn 是javascript的包管理工具，类似npm包管理工具，但是yarn比npm更快、更可靠、更安全。
+yarn有以下特点：1.离线工作如果之前安装过某个包，那么就可以在没有联网的情况下，再次安装。由于不需要再次下载安装，因此再次安装某个包会更快。
+2.从多个资料库安装yarn可以从npm、bower、git甚至是本地文件系统获取并安装javascript包。
+3.快速获取">
+<meta property="og:updated_time" content="2017-05-14T16:25:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Yarn学习实践">
+<meta name="twitter:description" content="##yarn介绍yarn 是javascript的包管理工具，类似npm包管理工具，但是yarn比npm更快、更可靠、更安全。
+yarn有以下特点：1.离线工作如果之前安装过某个包，那么就可以在没有联网的情况下，再次安装。由于不需要再次下载安装，因此再次安装某个包会更快。
+2.从多个资料库安装yarn可以从npm、bower、git甚至是本地文件系统获取并安装javascript包。
+3.快速获取">
+    
+        <link rel="alternative" href="/atom.xml" title="You know nothing!" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.2">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Leo</h5>
+          <a href="mailto:420212713@qq.com" title="420212713@qq.com" class="mail">420212713@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LeoZeda" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/demo"  >
+                <i class="icon icon-lg icon-folder"></i>
+                Demo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/aboutMe"  >
+                <i class="icon icon-lg icon-user-o"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Yarn学习实践</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Yarn学习实践</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-10T02:52:33.000Z" itemprop="datePublished" class="page-time">
+  2017-05-10
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-yarn学习实践"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Yarn学习实践</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-5-10 10:52" datetime="2017-05-10T02:52:33.000Z"  itemprop="datePublished">2017-05-10</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>##yarn介绍<br>yarn 是javascript的包管理工具，类似npm包管理工具，但是yarn比npm更快、更可靠、更安全。</p>
+<p>yarn有以下特点：<br><strong>1.离线工作</strong><br>如果之前安装过某个包，那么就可以在没有联网的情况下，再次安装。由于不需要再次下载安装，因此再次安装某个包会更快。</p>
+<p><strong>2.从多个资料库安装</strong><br>yarn可以从npm、bower、git甚至是本地文件系统获取并安装javascript包。</p>
+<p><strong>3.快速获取包</strong><br>yarn高效的将请求组成队列，避免大量使用网络资源。并会递归检查依赖包是否已经安装过，避免重复下载。<br>安装过程中，yarn是并行操作的，这使得安装过程快得多。</p>
+<p><strong>4.自动锁定包版本</strong><br>yarn在安装过程中自动产生yarn.lock文件，这个文件会锁定安装的包及其依赖的准确版本。</p>
+<p><strong>5.在不同设备中以相同的方式安装依赖</strong><br>yarn通过锁定文件和安装算法确保在不同的设备中，以及在生产环境中，安装的依赖都是相同的文件和相同的目录结构。</p>
+<p>##参考<br><a href="http://web.jobbole.com/tag/yarn/?repeat=w3tc" target="_blank" rel="external">伯乐在线</a><br><a href="http://web.jobbole.com/90284/" target="_blank" rel="external">Yarn 可以为你做的五件事</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-14T16:25:36.000Z" title="2017-5-15 0:25" itemprop="dateUpdated">2017年5月15日 0:25</time>
+</span><br>
+
+
+        这里写留言或版权声明：<a href="/2017/05/10/yarn学习实践/" target="_blank" rel="external">http://www.leozeda.com/2017/05/10/yarn学习实践/</a>
+    </div>
+    <footer>
+        <a href="http://www.leozeda.com">
+            <img src="/img/avatar.jpg" alt="Leo">
+            Leo
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yarn/">Yarn</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.leozeda.com/2017/05/10/yarn学习实践/&title=《Yarn学习实践》 — You know nothing!&pic=http://www.leozeda.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.leozeda.com/2017/05/10/yarn学习实践/&title=《Yarn学习实践》 — You know nothing!&source=my blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.leozeda.com/2017/05/10/yarn学习实践/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Yarn学习实践》 — You know nothing!&url=http://www.leozeda.com/2017/05/10/yarn学习实践/&via=http://www.leozeda.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.leozeda.com/2017/05/10/yarn学习实践/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/03/learning-vue/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue学习笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="yarn学习实践" data-title="Yarn学习实践" data-url="http://www.leozeda.com/2017/05/10/yarn学习实践/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'leoblog', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.2');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢各位~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>You know nothing! &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.leozeda.com/2017/05/10/yarn学习实践/&title=《Yarn学习实践》 — You know nothing!&pic=http://www.leozeda.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.leozeda.com/2017/05/10/yarn学习实践/&title=《Yarn学习实践》 — You know nothing!&source=my blog" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.leozeda.com/2017/05/10/yarn学习实践/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Yarn学习实践》 — You know nothing!&url=http://www.leozeda.com/2017/05/10/yarn学习实践/&via=http://www.leozeda.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.leozeda.com/2017/05/10/yarn学习实践/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aUY6DMAwFQO5/6e4BtsCzDaslDF8VoiGTSq5jZ9vi6xNcv588Hud4/O2OCwMD47GMfHLJ58k4x4tyQsXAwHgBYy+CVV+Zh9HemLv3MTAwMA4nkQfl47wu/y4GBgZGLyAeTzfZ7v5RwMXAwHgsIy+iJfd7CV9vY4yBgfEGRl51//vPt/Q3MDAwHsX4FK887cvbltUg+2VWGBgYSzMmrcfqpJMNbW+BMDAw1mbMJ9RL5uYJ4u7/BgYGxnKMXoTuFb+qTYVm0MfAwFiO0TuqNQ++kwNhGBgYb2Pk073vKOpxwC0sKAYGxtKMyZGLasqYF+OaAR0DA+MFjF4Y7ZX4q9va6BkMDIzlGNUyWTKJ6pP5Ip70YDEwMF7DyA9b9F4/TxB3C20YGBhLM/Lh8pBaLeTljcxtvioYGBiPYuTBNJniSQIXL2LvMAcGBsaqjLwZcBW4t4gnPwAGBsZrGMmgd4TUXqr65XQbBgbGoozeWYVrD17ckjJiYGAsx0gKakkBLhkh2lVXU0MMDIzXMPIGQDVdm6eehaohBgbGooz8sEW1MJcE7uoUy78MBgbGwxmf4pUH60morYZ7DAyMtRmTXKvXbky2tZNUEgMDY1VGnvZdtd3NS3jJMQ4MDIz3MHpDV1uS1TELe3EMDAyMQWuzeiws2R5jYGBgXNViTJ5P7mBgYGBMNrHJdPOUMa8LXlxuw8DA+PeM3tax11zspYzz92JgYDyW8QOYCSfNe2V3ywAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
